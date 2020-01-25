@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 327838436}
   - component: {fileID: 327838439}
   - component: {fileID: 327838438}
+  - component: {fileID: 327838440}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -578,6 +579,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &327838440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327838435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e8a645b21595745aaa03df2a744ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Inventory:
+  - {fileID: 1918322619969254, guid: f9987b78bd301754589a90a4cf53a9a1, type: 2}
+  - {fileID: 1419446975734954, guid: ff1377690948d8d4ea7ac5adfae1fbfe, type: 2}
+  - {fileID: 1442435746593058, guid: 60972b7316e217a469a2783a42a50d95, type: 2}
+  - {fileID: 1269421327669784, guid: 719ccfe26f4c5ad42a7f9145d3e0721c, type: 2}
+  - {fileID: 1167146663563014, guid: 780eb650c68f72d4c840c1d3c4e6e090, type: 2}
+  SelectedItem: {fileID: 0}
+  currentindex: 0
 --- !u!1 &378634918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1559,7 @@ GameObject:
   - component: {fileID: 1375674604}
   - component: {fileID: 1375674608}
   m_Layer: 10
-  m_Name: Chore 1
+  m_Name: Chore
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c74de4d79767e45be3d561f76dd4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scriptname: OpenandClose
+  Scriptname: TaskInteraction
 --- !u!61 &1375674606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1648,7 +1668,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1375674603}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b67ceffb278bce48a25d68a1803496c, type: 3}
   m_Name: 
@@ -1656,7 +1676,11 @@ MonoBehaviour:
   UsableItems:
   - Glue
   - Nails
+  - Paper
+  issolved: 0
   ItemMenu: {fileID: 0}
+  Player: {fileID: 0}
+  SolutionsText: []
 --- !u!1 &1432068057
 GameObject:
   m_ObjectHideFlags: 0

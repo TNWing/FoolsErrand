@@ -5,14 +5,14 @@ using UnityEngine;
 public class Interaction : MonoBehaviour {
     public bool end = false;
     public bool interact = false;
-    // Use this for initialization
+
     void Start()
     {
         StartCoroutine(NoTarget());
         StartCoroutine(Remove());
     }
 
-    void OnTriggerEnter2D(Collider2D collision)//does not register collision
+    void OnTriggerEnter2D(Collider2D collision)
     {
         interact = true;
         GameObject c = collision.gameObject;
@@ -20,6 +20,11 @@ public class Interaction : MonoBehaviour {
         {
             c.GetComponent<BaseInteraction>().enabled = true;
         }
+        StartCoroutine(SetEndTrue());
+    }
+    IEnumerator SetEndTrue()
+    {
+        yield return null;
         end = true;
     }
     IEnumerator NoTarget()
