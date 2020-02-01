@@ -61,14 +61,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BaseInteraction.cs" />
-    <Compile Include="Assets\BasicInventory.cs" />
-    <Compile Include="Assets\GameControl.cs" />
-    <Compile Include="Assets\Interaction.cs" />
-    <Compile Include="Assets\ListofItems.cs" />
-    <Compile Include="Assets\OpenandClose.cs" />
-    <Compile Include="Assets\PlayerInteraction.cs" />
-    <Compile Include="Assets\TaskInteraction.cs" />
+    <Compile Include="Assets\Scripts\BaseInteraction.cs" />
+    <Compile Include="Assets\Scripts\BasicInventory.cs" />
+    <Compile Include="Assets\Scripts\GameControl.cs" />
+    <Compile Include="Assets\Scripts\Interaction.cs" />
+    <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\ListofItems.cs" />
+    <Compile Include="Assets\Scripts\OpenandClose.cs" />
+    <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
+    <Compile Include="Assets\Scripts\TaskInteraction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
