@@ -30,6 +30,7 @@ public class PickUp : MonoBehaviour
                     inventory.isFull[i] = true;
                     //this instantiates/creates the sprite in the inventory box
                     GameObject obj=Instantiate(item, inventory.slots[i].transform, false);
+                    obj.name= obj.name.Replace("(Clone)", "").Trim();
                     //this destroys the item that collided with the player
                     Destroy(gameObject);
                     //breaks the process for it to not repeat forever

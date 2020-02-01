@@ -31,17 +31,22 @@ public class TaskInteraction : MonoBehaviour {
     {
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         var Sol = SList.Solutions;
+        var Inv = Player.GetComponent<Inventory>().slots;
         bool isvalid=false;
+        List<GameObject> objs = new List<GameObject>();
         for (int i = 0; i < Sol.Count; i++)
         {
+            
             for (int n = 0; n < Sol[i].reqitems.Count; n++)
             {
+                string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
                 bool hasitem=false;
-                for (int c = 0; c < Player.GetComponent<BasicInventory>().Inventory.Length; c++)
+                for (int c = 0; c < Inv.Length; c++)
                 {
-                    if (Sol[i].reqitems[n].ToLower() == Player.GetComponent<BasicInventory>().Inventory[c].name.ToLower())
+                    if (Inv[c].transform.childCount>0 && ItemName.ToLower() == Inv[c].transform.GetChild(0).gameObject.name.ToLower())
                     {
                         hasitem = true;
+                        objs.Add(Inv[c].transform.GetChild(0).gameObject);
                     }
                 }
                 if (hasitem == false)
@@ -56,9 +61,14 @@ public class TaskInteraction : MonoBehaviour {
             if (isvalid)
             {
                 issolved = true;
+                foreach (GameObject g in objs)
+                {
+                    Destroy(g);
+                }
                 Debug.Log("Advanced Solved");
                 break;
             }
+            objs = new List<GameObject>();
         }
         yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
         this.enabled = false;
