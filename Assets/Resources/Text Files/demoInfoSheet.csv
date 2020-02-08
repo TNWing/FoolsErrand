@@ -1,0 +1,7 @@
+Name,Description/Function,
+Baseball Bat(T),Pretty good for making a funny "thwack" noise.,batSprite,
+Chair(E),Sturdy enough to keep something shut@ Knock on wood!,chairSprite,
+Closet(P),It's filled with a sorts of neat coats and scarves! Sturdy@ too!,closetSprite,
+Closet Doors(M),Picked straight from the old wardrobe!,closetDoorSprite,
+Clothes(M),Rippable at the seams.,clothesSprite,
+Front Door(P),It doesn't lock. Someone might try to break in.,frontDoorSprite,

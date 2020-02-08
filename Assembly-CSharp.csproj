@@ -62,11 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BaseInteraction.cs" />
-    <Compile Include="Assets\Scripts\BasicInventory.cs" />
+    <Compile Include="Assets\Scripts\DialogueReader.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\Interaction.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\ListofItems.cs" />
+    <Compile Include="Assets\Scripts\ObjectDataCache.cs" />
     <Compile Include="Assets\Scripts\OpenandClose.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
