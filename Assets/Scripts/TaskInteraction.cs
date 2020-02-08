@@ -33,6 +33,7 @@ public class TaskInteraction : MonoBehaviour {
         var Inv = Player.GetComponent<Inventory>().slots;
         bool isvalid=false;
         List<GameObject> objs = new List<GameObject>();
+        List<int> invlist = new List<int>();
         for (int i = 0; i < Sol.Count; i++)
         {
             
@@ -46,6 +47,7 @@ public class TaskInteraction : MonoBehaviour {
                     {
                         hasitem = true;
                         objs.Add(Inv[c].transform.GetChild(0).gameObject);
+                        invlist.Add(c);
                     }
                 }
                 if (hasitem == false)
@@ -62,12 +64,18 @@ public class TaskInteraction : MonoBehaviour {
                 issolved = true;
                 foreach (GameObject g in objs)
                 {
+                    
                     Destroy(g);
+                }
+                foreach (int index in invlist)
+                {
+                    Player.GetComponent<Inventory>().isFull[index] = false;
                 }
                 Debug.Log("Advanced Solved");
                 break;
             }
             objs = new List<GameObject>();
+            invlist = new List<int>();
         }
         yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
         this.enabled = false;
