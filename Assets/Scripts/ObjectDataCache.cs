@@ -17,11 +17,11 @@ public class ObjectDataCache : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        if (GetComponent<SpriteRenderer>().sprite == null || GetComponent<SpriteRenderer>().sprite.name != thisObject.mySprite)
-        {
-            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/" + thisObject.mySprite);
-        }
-	}
+	//// Update is called once per frame
+	//void Update () {
+ //       if (GetComponentInChildren<SpriteRenderer>().sprite == null || GetComponentInChildren<SpriteRenderer>().sprite.name != thisObject.mySprite)
+ //       {
+ //           GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/" + thisObject.mySprite);
+ //       }
+	//}
 }
