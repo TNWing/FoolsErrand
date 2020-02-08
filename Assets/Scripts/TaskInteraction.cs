@@ -13,7 +13,6 @@ public class SolutionList
 }
 
 public class TaskInteraction : MonoBehaviour {
-    public string[] UsableItems;
     public bool issolved;
     public GameObject ItemMenu;
     public GameObject Player;

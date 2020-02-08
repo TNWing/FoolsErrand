@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4421450573547300}
   - component: {fileID: 61781797085305300}
   - component: {fileID: 114406801495011282}
+  - component: {fileID: 114738145693355602}
   m_Layer: 0
   m_Name: Baseball Bat
   m_TagString: Untagged
@@ -52,7 +53,7 @@ Transform:
   m_GameObject: {fileID: 1173425782254230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4421450573547300}
   m_RootOrder: 0
@@ -108,6 +109,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 1887321813307574, guid: 4d0bf685aa76a9d47b758c833132f181, type: 2}
+--- !u!114 &114738145693355602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377195915624166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fd8edc3300e9845a0ad1c5a31807ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisObject:
+    myName: 
+    myDesc: 
+    mySprite: 
 --- !u!212 &212226041131912166
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -143,8 +159,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dee3473783aefb84bb2e2a4ece8d37a0, type: 3}
-  m_Color: {r: 0.38679248, g: 0.22887252, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4a7a67238e682814e94d9c2960821395, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
