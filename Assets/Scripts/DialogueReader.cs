@@ -8,7 +8,6 @@ public class DialogueReader : MonoBehaviour
     public TextAsset materialData, toolData, puzzleData, environmentData;
     //TextAsset toolData = Resources.Load<TextAsset>("Text Files/demoInfoSheet");
 
-    // Use this for initialization
     void Start()
     {
         interactables = FindObjectsOfType<ObjectDataCache>();

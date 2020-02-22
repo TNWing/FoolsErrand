@@ -5,7 +5,6 @@ using UnityEngine;
 public class Destroyable : MonoBehaviour {
     private Inventory inventory;
     public GameObject item;//item needed to destroy gameobject
-    public bool isdestroyed;
 
     public Inventory Inventory;
 
@@ -16,8 +15,8 @@ public class Destroyable : MonoBehaviour {
     {
         Inventory= GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
-    void OnEnable() {
-        
+    void OnEnable()
+    {
         if (Inventory.isFull[Inventory.selectedslot])
         {
             obj = Inventory.slots[Inventory.selectedslot].transform.GetChild(0).gameObject;
