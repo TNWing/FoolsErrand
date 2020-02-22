@@ -12,12 +12,8 @@ public class ObjectDataCache : MonoBehaviour {
 
     public InteractableData thisObject;
 
-	
-	//// Update is called once per frame
-	//void Update () {
- //       if (GetComponentInChildren<SpriteRenderer>().sprite == null || GetComponentInChildren<SpriteRenderer>().sprite.name != thisObject.mySprite)
- //       {
- //           GetComponentInChildren<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/" + thisObject.mySprite);
- //       }
-	//}
+    // Use this for initialization
+    void Start () {
+		
+	}
 }
