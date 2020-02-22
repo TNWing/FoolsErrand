@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraMove.cs" />
+    <Compile Include="Assets\Destroyable.cs" />
     <Compile Include="Assets\Scripts\BaseInteraction.cs" />
     <Compile Include="Assets\Scripts\DialogueReader.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
