@@ -76,7 +76,6 @@ public class TaskInteraction : MonoBehaviour {
                 {
                     Player.GetComponent<Inventory>().isFull[index] = false;
                 }
-                Debug.Log("Advanced Solved");
                 break;
             }
             objs = new List<GameObject>();

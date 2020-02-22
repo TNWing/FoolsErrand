@@ -18,21 +18,21 @@ public class Destroyable : MonoBehaviour {
     }
     void OnEnable() {
         
-        obj = Inventory.slots[Inventory.selectedslot].transform.GetChild(0).gameObject;
-        string ItemName = (item.name + " (Inventory)").ToLower();
-        if (obj!=null && obj.name.ToLower() == ItemName)
+        if (Inventory.isFull[Inventory.selectedslot])
         {
-            SpawnObj();
-        }
-        else
-        {
+            obj = Inventory.slots[Inventory.selectedslot].transform.GetChild(0).gameObject;
+            string ItemName = (item.name + " (Inventory)").ToLower();
+            if (obj != null && obj.name.ToLower() == ItemName)
+            {
+                SpawnObj();
+            }
             this.enabled = false;
         }
+        this.enabled = false;
     }
     void SpawnObj()
     {
         GameObject Obj = Instantiate(SpawnedItem, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        this.enabled = false;
     }
 }

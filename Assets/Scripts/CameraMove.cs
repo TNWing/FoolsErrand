@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [System.Serializable]
 public class Boundary
 {
@@ -11,7 +9,7 @@ public class CameraMove : MonoBehaviour
     public GameObject Player;
     public Boundary Boundary;
     public float speed;
-    // Use this for initialization
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -19,8 +17,9 @@ public class CameraMove : MonoBehaviour
 
     void Update()
     {
-        float posx = Mathf.Clamp(Player.transform.position.x, Boundary.xMin, Boundary.xMax);
-        float posy = Mathf.Clamp(Player.transform.position.y, Boundary.yMin, Boundary.yMax);
+        Vector2 pos = Player.transform.position;
+        float posx = Mathf.Clamp(pos.x, pos.x+Boundary.xMin, pos.x+Boundary.xMax);
+        float posy = Mathf.Clamp(pos.y, pos.y+Boundary.yMin, pos.y+Boundary.yMax);
         Vector3 newpos = new Vector3(posx, posy, -10);
         transform.position = newpos;
     }
