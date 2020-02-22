@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437089747855938}
   - component: {fileID: 212782034260102916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Red Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 61786570840422706}
   - component: {fileID: 114400377673293292}
   - component: {fileID: 114767791683545460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bookcase
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057110136113282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4639011871676190}
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772090100032030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 2, z: 0}
+  m_LocalPosition: {x: 7, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4437089747855938}
@@ -81,10 +81,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: -0.4, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -95,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.4}
+  m_Size: {x: 2, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &114400377673293292
 MonoBehaviour:
@@ -103,12 +103,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772090100032030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45c74de4d79767e45be3d561f76dd4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scriptname: 
+  Scriptname: Destroyable
   temp: 0
 --- !u!114 &114767791683545460
 MonoBehaviour:
@@ -116,13 +116,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772090100032030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 794c292bf1d7b994cb8c51a25bd09b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 1377195915624166, guid: 43553e23a5d0e66479e9c54d9e87d09c, type: 2}
   isdestroyed: 0
+  Inventory: {fileID: 0}
+  obj: {fileID: 0}
+  SpawnedItem: {fileID: 1582775185955990, guid: c2a69a338e5ee4043b22f53e1d7b39f0,
+    type: 2}
 --- !u!212 &212782034260102916
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -158,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8f2c0128aee98d4192a9fcd7a7336c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bb33f48c1af65a4bbb9fd9b26cf8179, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

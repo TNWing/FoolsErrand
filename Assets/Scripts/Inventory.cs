@@ -22,6 +22,8 @@ public class Inventory : MonoBehaviour
         defaultcolor = new Color(0.8018868f, 0.8018868f, 0.8018868f);
         selectedcolor= new Color(0.4f, 0.7f, 0.9f);
         Inv = GameObject.Find("Inventory");
+        Inv.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectedcolor;
+        
         keys[0] = KeyCode.Alpha1;
         keys[1] = KeyCode.Alpha2;
         keys[2] = KeyCode.Alpha3;

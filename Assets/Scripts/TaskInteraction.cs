@@ -26,6 +26,11 @@ public class TaskInteraction : MonoBehaviour {
             StartCoroutine(AdvancedSolution());
         }
 	}
+    IEnumerator Solve()//wip solve func
+    {
+        yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
+        var Sol = SList.Solutions;
+    }
     IEnumerator AdvancedSolution()
     {
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
