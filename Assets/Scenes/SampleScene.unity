@@ -425,6 +425,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2d14cf92dc3f6d48b08f22f47840f97, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &322331788
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639011871676190, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d1ea54790c31134696ac5d08fc93378, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &327838435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1449,7 @@ MonoBehaviour:
   SList:
     Solutions:
     - reqitems:
-      - Baseball Bat
+      - Wood
       - Nails
     - reqitems:
       - Chair
@@ -1570,6 +1612,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719ccfe26f4c5ad42a7f9145d3e0721c, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1761721479
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006168068794790, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2a69a338e5ee4043b22f53e1d7b39f0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1825294722 stripped
 GameObject:
