@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectDataCache : MonoBehaviour {
 
@@ -11,9 +9,4 @@ public class ObjectDataCache : MonoBehaviour {
     }
 
     public InteractableData thisObject;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 }

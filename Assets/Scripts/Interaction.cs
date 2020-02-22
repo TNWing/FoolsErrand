@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour {
 
     void Start()
     {
-        StartCoroutine(NoTarget());
+        Invoke("Target", 0.1f);
         StartCoroutine(Remove());
     }
 
@@ -19,16 +19,14 @@ public class Interaction : MonoBehaviour {
         {
             c.GetComponent<BaseInteraction>().enabled = true;
         }
-        StartCoroutine(SetEndTrue());
+        Invoke("SetEndTrue", 0.01f);
     }
-    IEnumerator SetEndTrue()
+    void SetEndTrue()
     {
-        yield return null;
         end = true;
     }
-    IEnumerator NoTarget()
+    void NoTarget()
     {
-        yield return new WaitForSeconds(0.1f);
         if (!interact)
         {
             end = true;

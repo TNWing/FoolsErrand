@@ -14,12 +14,11 @@ public class PickUp : MonoBehaviour
     }
 
     //this activates when the player collides with an object that is in trigger mode
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         //checks for the player tag
         if (other.CompareTag("Player"))
         {
-
             //repeats the process the number of inventory slots avaleable
             for (int i = 0; i < inventory.slots.Length; i++)
             {
