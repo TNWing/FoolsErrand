@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour {
 
     void Start()
     {
-        Invoke("Target", 0.1f);
+        Invoke("NoTarget", 0.1f);
         StartCoroutine(Remove());
     }
 

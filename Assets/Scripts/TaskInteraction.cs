@@ -38,6 +38,7 @@ public class TaskInteraction : MonoBehaviour {
 	}
     IEnumerator Solve()//wip solve func
     {
+        Debug.Log("h");
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         var Sol = SList.Solutions;
         var IU = IUList.SolutionItems;
@@ -58,6 +59,7 @@ public class TaskInteraction : MonoBehaviour {
                         itemvalid = true;
                         IU[i].itemused[n] = true;
                         Destroy(Inv[e].transform.GetChild(0).gameObject);
+                        Player.GetComponent<Inventory>().isFull[e] = false;
                         bool isreadytosolve = true;
                         for (int c = 0; c < Sol[i].reqitems.Count; c++)
                         {
