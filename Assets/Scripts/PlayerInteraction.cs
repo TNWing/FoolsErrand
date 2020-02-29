@@ -18,11 +18,19 @@ public class PlayerInteraction : MonoBehaviour {
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime * Input.GetAxis("Horizontal");
             DirFace = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }    
         }
         if (Input.GetButton("Vertical"))
         {
             transform.position += new Vector3(0, speed, 0) * Time.deltaTime * Input.GetAxis("Vertical");
             DirFace = new Vector3(0, Input.GetAxis("Vertical"), 0);
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
     IEnumerator Interact()

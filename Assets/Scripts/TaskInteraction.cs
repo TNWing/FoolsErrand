@@ -22,6 +22,7 @@ public class ListofIU//list of above class
     public List<ItemUsed> SolutionItems;
 }
 public class TaskInteraction : MonoBehaviour {
+    public List<AudioSource> SFXList = new List<AudioSource>();
     public bool issolved;
     public GameObject ItemMenu;
     public GameObject Player;
@@ -46,7 +47,7 @@ public class TaskInteraction : MonoBehaviour {
         bool isvalid = false;
         bool itemvalid=false;
         var e = Player.GetComponent<Inventory>().selectedslot;
-        if (e != 9 && Player.GetComponent<Inventory>().isFull[e])
+        if (e != 9 && Player.GetComponent<Inventory>().isFull[e]==true)
         {
             string obj = Inv[e].transform.GetChild(0).gameObject.name.ToLower();
             for (int i = 0; i < Sol.Count; i++)
