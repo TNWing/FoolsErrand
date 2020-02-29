@@ -4,10 +4,8 @@ public class Inventory : MonoBehaviour
 {
     public bool[] isFull;
     public GameObject[] slots;
-
-    public Transform Inv;
-
-    public KeyCode[] keys = new KeyCode[5];
+    Transform Inv;
+    KeyCode[] keys = new KeyCode[5];
     public int selectedslot;
 
     public Color defaultcolor, selectedcolor;
