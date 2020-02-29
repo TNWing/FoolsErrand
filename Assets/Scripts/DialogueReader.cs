@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
 
-public class DialogueReader : MonoBehaviour {
-
+public class DialogueReader : MonoBehaviour
+{
     public string[] row, data;
     //This array hold all objects that are in the scene
     public ObjectDataCache[] interactables;
@@ -19,7 +22,7 @@ public class DialogueReader : MonoBehaviour {
             //Split line into new element when encountering a comma
             data = row[i].Split(new char[] { ',' });
 
-            //When encountering a (?) in the FIRST point, replace with plank text and add the corresponding tag
+            //When encountering a (?) in the FIRST point, replace with blank text and add the corresponding tag
             if (data[0].Contains("(M)"))
             {
                 data[0] = data[0].Replace("(M)", "");
@@ -42,7 +45,8 @@ public class DialogueReader : MonoBehaviour {
             }
 
             //When encounterng a @ in the SECOND point, replace with a comma
-            if (data[1].Contains("@")){
+            if (data[1].Contains("@"))
+            {
                 data[1] = data[1].Replace('@', ',');
             }
 
