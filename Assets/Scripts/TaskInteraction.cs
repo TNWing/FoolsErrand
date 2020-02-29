@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class RequiredItems
+public class RequiredItems//provides list of items req for a solution
 {
     public List<string> reqitems;
 }
 [System.Serializable]
-public class SolutionList
+public class SolutionList//contains all the req items for each solution
 {
     public List<RequiredItems> Solutions;
 }
-
+public class ItemUsed//states if the item needed was used on this problem (used for multi-obj solutions)
+{
+    public List<bool> itemused;
+}
+public class ListofIU//list of above class
+{
+    public List<ItemUsed> SolutionItems;
+}
 public class TaskInteraction : MonoBehaviour {
     public bool issolved;
     public GameObject ItemMenu;
@@ -30,6 +37,20 @@ public class TaskInteraction : MonoBehaviour {
     {
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         var Sol = SList.Solutions;
+        var Inv = Player.GetComponent<Inventory>().slots;
+        bool isvalid = false;
+        for (int i = 0; i < Sol.Count; i++)
+        {
+            for (int n=0;n<Sol[i].reqitems.Count; n++)
+            {
+                string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
+                if (ItemName)
+            }
+        }
+        if (!isvalid)
+        {
+            Debug.Log("You can't seem to figure out how to use this item...");
+        }
     }
     IEnumerator AdvancedSolution()
     {
@@ -48,7 +69,7 @@ public class TaskInteraction : MonoBehaviour {
                 bool hasitem=false;
                 for (int c = 0; c < Inv.Length; c++)
                 {
-                    if (Inv[c].transform.childCount>0 && ItemName.ToLower() == Inv[c].transform.GetChild(0).gameObject.name.ToLower())
+                    if (Inv[c].transform.childCount>0 && ItemName == Inv[c].transform.GetChild(0).gameObject.name.ToLower())
                     {
                         hasitem = true;
                         objs.Add(Inv[c].transform.GetChild(0).gameObject);

@@ -3,10 +3,9 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public bool[] isFull;
-
     public GameObject[] slots;
 
-    public GameObject Inv;
+    public Transform Inv;
 
     public KeyCode[] keys = new KeyCode[5];
     public int selectedslot;
@@ -17,8 +16,8 @@ public class Inventory : MonoBehaviour
     {
         defaultcolor = new Color(0.8018868f, 0.8018868f, 0.8018868f);
         selectedcolor= new Color(0.4f, 0.7f, 0.9f);
-        Inv = GameObject.Find("Inventory");
-        Inv.transform.GetChild(0).gameObject.GetComponent<Image>().color = selectedcolor;
+        Inv = GameObject.Find("Inventory").transform;
+        Inv.GetChild(0).gameObject.GetComponent<Image>().color = selectedcolor;
         
         keys[0] = KeyCode.Alpha1;
         keys[1] = KeyCode.Alpha2;
@@ -30,21 +29,30 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            if (Input.GetKey(keys[i]))
+            if (Input.GetKeyDown(keys[i]))
             {
-                selectedslot = i;
-                var obj = Inv.transform.GetChild(i).gameObject;
-                obj.GetComponent<Image>().color = selectedcolor;
-                for (int c = 0; c < 5; c++)
+                if (selectedslot == i)
                 {
-                    if (c != i)
+                    selectedslot = 9;
+                    Inv.GetChild(i).gameObject.GetComponent<Image>().color = defaultcolor;
+                }
+                else
+                {
+                    selectedslot = i;
+                    var obj = Inv.GetChild(i).gameObject;
+                    obj.GetComponent<Image>().color = selectedcolor;
+                    for (int c = 0; c < 5; c++)
                     {
-                        var slot = Inv.transform.GetChild(c).gameObject;
-                        slot.GetComponent<Image>().color = defaultcolor;
+                        if (c != i)
+                        {
+                            var slot = Inv.GetChild(c).gameObject;
+                            slot.GetComponent<Image>().color = defaultcolor;
+                        }
                     }
                 }
                 break;
             }
         }
     }
+    
 }
