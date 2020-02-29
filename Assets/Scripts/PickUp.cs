@@ -19,7 +19,6 @@ public class PickUp : MonoBehaviour
         //checks for the player tag
         if (other.CompareTag("Player"))
         {
-            Debug.Log(inventory.slots.Length);
             //repeats the process the number of inventory slots avaleable
             for (int i = 0; i < inventory.slots.Length; i++)
             {
