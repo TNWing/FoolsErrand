@@ -53,7 +53,6 @@ public class TaskInteraction : MonoBehaviour {
                 for (int n = 0; n < Sol[i].reqitems.Count; n++)
                 {
                     string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
-                    Debug.Log(ItemName);
                     if (ItemName == obj)
                     {
                         itemvalid = true;
@@ -76,73 +75,23 @@ public class TaskInteraction : MonoBehaviour {
                 }
                 if (isvalid == true)
                 {
-                    Debug.Log("Solved Loser");
+                    Debug.Log("Solved");
                     issolved = true;
                     break;
                 }
-            }
-            if (itemvalid == false)
-            {
-                Debug.Log("You can't seem to figure out how to use this item...");
-            }
-            else
-            {
-                Debug.Log("You used an item");
-            }
-        } 
-        yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
-        this.enabled = false;
-    }
-    IEnumerator AdvancedSolution()
-    {
-        yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
-        var Sol = SList.Solutions;
-        var Inv = Player.GetComponent<Inventory>().slots;
-        bool isvalid=false;
-        List<GameObject> objs = new List<GameObject>();
-        List<int> invlist = new List<int>();
-        for (int i = 0; i < Sol.Count; i++)
-        {
-            
-            for (int n = 0; n < Sol[i].reqitems.Count; n++)
-            {
-                string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
-                bool hasitem=false;
-                for (int c = 0; c < Inv.Length; c++)
+                else
                 {
-                    if (Inv[c].transform.childCount>0 && ItemName == Inv[c].transform.GetChild(0).gameObject.name.ToLower())
+                    if (itemvalid == false)
                     {
-                        hasitem = true;
-                        objs.Add(Inv[c].transform.GetChild(0).gameObject);
-                        invlist.Add(c);
+                        Debug.Log("You can't seem to figure out how to use this item...");
+                    }
+                    else
+                    {
+                        Debug.Log("You used an item");
                     }
                 }
-                if (hasitem == false)
-                {
-                    break;
-                }
-                if (n+1 == Sol[i].reqitems.Count)
-                {
-                    isvalid = true;
-                }
             }
-            if (isvalid)
-            {
-                issolved = true;
-                foreach (GameObject g in objs)
-                {
-                    
-                    Destroy(g);
-                }
-                foreach (int index in invlist)
-                {
-                    Player.GetComponent<Inventory>().isFull[index] = false;
-                }
-                break;
-            }
-            objs = new List<GameObject>();
-            invlist = new List<int>();
-        }
+        } 
         yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
         this.enabled = false;
     }
