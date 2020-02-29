@@ -2,8 +2,8 @@
 using UnityEngine;
 
 public class Interaction : MonoBehaviour {
-    public bool end = false;
-    public bool interact = false;
+    public bool end;
+    public bool interact;
 
     void Start()
     {

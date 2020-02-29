@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour {
     public GameObject InteractionObj;
     public Vector3 DirFace;
     public bool caninteract = true;
+
     // Use this for initialization
     void Start()
     {

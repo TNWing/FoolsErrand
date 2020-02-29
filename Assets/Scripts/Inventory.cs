@@ -10,12 +10,9 @@ public class Inventory : MonoBehaviour
     public KeyCode[] keys = new KeyCode[5];
     public int selectedslot;
 
-    public Color defaultcolor;
-    public Color selectedcolor;
+    public Color defaultcolor, selectedcolor;
     void Start()
     {
-        defaultcolor = new Color(0.8018868f, 0.8018868f, 0.8018868f);
-        selectedcolor= new Color(0.4f, 0.7f, 0.9f);
         Inv = GameObject.Find("Inventory").transform;
         Inv.GetChild(0).gameObject.GetComponent<Image>().color = selectedcolor;
         

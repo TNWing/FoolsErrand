@@ -21,11 +21,11 @@ public class DialogueReader : MonoBehaviour
     {
         string[] row;
         string[] data = new string[4];
-        row = materialData.text.Split(new char[] { '\n' });
+        row = environmentData.text.Split(new char[] { '\n' });
         for (int i = 1; i < row.Length; i++)
         {
             data = row[i].Split(new char[] { ',' });
-            data[3] = "Material";
+            data[3] = "Environment";
             if (data[1].Contains("@"))
             {
                 data[1] = data[1].Replace('@', ',');
@@ -47,11 +47,11 @@ public class DialogueReader : MonoBehaviour
     {
         string[] row;
         string[] data = new string[4];
-        row = toolData.text.Split(new char[] { '\n' });
+        row = materialData.text.Split(new char[] { '\n' });
         for (int i = 1; i < row.Length; i++)
         {
             data = row[i].Split(new char[] { ',' });
-            data[3] = "Tool";
+            data[3] = "Material";
             if (data[1].Contains("@"))
             {
                 data[1] = data[1].Replace('@', ',');
@@ -77,7 +77,7 @@ public class DialogueReader : MonoBehaviour
         for (int i = 1; i < row.Length; i++)
         {
             data = row[i].Split(new char[] { ',' });
-            data[3] = "Tool";
+            data[3] = "Puzzle";
             if (data[1].Contains("@"))
             {
                 data[1] = data[1].Replace('@', ',');
@@ -99,7 +99,7 @@ public class DialogueReader : MonoBehaviour
     {
         string[] row;
         string[] data = new string[4];
-        row = environmentData.text.Split(new char[] { '\n' });
+        row = toolData.text.Split(new char[] { '\n' });
         for (int i = 1; i < row.Length; i++)
         {
             data = row[i].Split(new char[] { ',' });

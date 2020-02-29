@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [System.Serializable]
 public class RequiredItems//provides list of items req for a solution
 {
     public List<string> reqitems;
 }
+
 [System.Serializable]
 public class SolutionList//contains all the req items for each solution
 {
     public List<RequiredItems> Solutions;
 }
+
 [System.Serializable]
 public class ItemUsed//states if the item needed was used on this problem (used for multi-obj solutions)
 {
     public List<bool> itemused;
 }
+
 [System.Serializable]
 public class ListofIU//list of above class
 {
