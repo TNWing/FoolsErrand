@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{64339A56-7948-CED0-6E4F-DB54AAD5B438}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueText.cs">
+    <Files>
+      <File FileName="Assets/Scripts/DialogueText.cs" Line="30" Column="118" />
+      <File FileName="Assets/Scripts/ObjectDataCache.cs" Line="7" Column="26" />
+      <File FileName="Assets/Scripts/DialogueReader.cs" Line="54" Column="48" />
+      <File FileName="Assets/Scripts/BaseInteraction.cs" Line="10" Column="1" />
+      <File FileName="Assets/Destroyable.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/PlayerInteraction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction.cs" Line="42" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
