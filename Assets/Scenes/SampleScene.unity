@@ -606,7 +606,6 @@ GameObject:
   - component: {fileID: 327838436}
   - component: {fileID: 327838439}
   - component: {fileID: 327838438}
-  - component: {fileID: 327838442}
   - component: {fileID: 327838441}
   m_Layer: 8
   m_Name: Player
@@ -713,18 +712,6 @@ MonoBehaviour:
   selectedslot: 0
   defaultcolor: {r: 0, g: 0, b: 0, a: 0}
   selectedcolor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &327838442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327838435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
 --- !u!1 &459569091
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,11 +804,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Boundary:
-    xMin: -7
-    xMax: 7
-    yMin: -2
-    yMax: 2
-  speed: 4
+    xMin: 0
+    xMax: 0
+    yMin: 0
+    yMax: 0
+  speed: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1071,6 +1058,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1377195915624166, guid: 43553e23a5d0e66479e9c54d9e87d09c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43553e23a5d0e66479e9c54d9e87d09c, type: 2}
   m_IsPrefabAsset: 0
@@ -1172,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1104746977956930, guid: db030664a5c915b4cb668dfd30746eac, type: 2}
+  item: {fileID: 0}
 --- !u!1 &877833383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,11 +1196,9 @@ MonoBehaviour:
   ItemMenu: {fileID: 0}
   Player: {fileID: 0}
   SList:
-    Solutions:
-    - reqitems:
-      - Matches
-    - reqitems:
-      - Bleach
+    Solutions: []
+  IUList:
+    SolutionItems: []
   SolutionsText: []
 --- !u!114 &877833385
 MonoBehaviour:
@@ -1765,10 +1754,12 @@ MonoBehaviour:
       - Wood
       - Nails
     - reqitems:
-      - Chair
-  SolutionsText:
-  - 
-  - 
+      - 
+  IUList:
+    SolutionItems:
+    - itemused: 0000
+    - itemused: 00
+  SolutionsText: []
 --- !u!1 &1421891719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,11 +1990,9 @@ MonoBehaviour:
   ItemMenu: {fileID: 0}
   Player: {fileID: 0}
   SList:
-    Solutions:
-    - reqitems:
-      - Glue
-      - Clothes
-    - reqitems: []
+    Solutions: []
+  IUList:
+    SolutionItems: []
   SolutionsText: []
 --- !u!114 &1523973608
 MonoBehaviour:
@@ -2016,7 +2005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c74de4d79767e45be3d561f76dd4d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scriptname: TaskInteraction
+  Scriptname: 
 --- !u!1001 &1617299793
 Prefab:
   m_ObjectHideFlags: 0
