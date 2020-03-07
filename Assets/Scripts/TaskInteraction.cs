@@ -37,9 +37,8 @@ public class TaskInteraction : MonoBehaviour {
             StartCoroutine(Solve());
         }
 	}
-    IEnumerator Solve()//wip solve func
+    IEnumerator Solve()
     {
-        Debug.Log("h");
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
         var Sol = SList.Solutions;
         var IU = IUList.SolutionItems;

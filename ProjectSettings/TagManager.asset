@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Interactable
   - Item Menu
+  - Tool
+  - Environment
+  - Material
+  - Puzzle
   layers:
   - Default
   - TransparentFX

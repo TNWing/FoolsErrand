@@ -15,7 +15,7 @@ public class Interaction : MonoBehaviour {
     {
         interact = true;
         GameObject c = collision.gameObject;
-        if (c.tag=="Interactable")
+        if (c.GetComponent<BaseInteraction>()!=null)
         {
             c.GetComponent<BaseInteraction>().enabled = true;
         }
