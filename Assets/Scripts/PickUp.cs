@@ -7,35 +7,24 @@ public class PickUp : MonoBehaviour
     private Inventory inventory;
     public GameObject item;
 
-    void Start()
+    void OnEnable()
     {
-        //finds the GameObject with the tag "Player"
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>(); 
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        GetItem();
     }
-
-    //this activates when the player collides with an object that is in trigger mode
-    void OnTriggerEnter2D(Collider2D other)
+    void GetItem()
     {
-        //checks for the player tag
-        if (other.CompareTag("Player"))
+        for (int i = 0; i < inventory.slots.Length; i++)
         {
-            //repeats the process the number of inventory slots avaleable
-            for (int i = 0; i < inventory.slots.Length; i++)
+            if (inventory.isFull[i] == false)
             {
-                //checks if the inventory selected is full or not
-                if (inventory.isFull[i] == false)
-                {
-                    //makes the inventory slot currently selected (full)
-                    inventory.isFull[i] = true;
-                    //this instantiates/creates the sprite in the inventory box
-                    GameObject obj=Instantiate(item, inventory.slots[i].transform, false);
-                    obj.name= obj.name.Replace("(Clone)", "").Trim();
-                    //this destroys the item that collided with the player
-                    Destroy(gameObject);
-                    //breaks the process for it to not repeat forever
-                    break;
-                }
+                inventory.isFull[i] = true;
+                GameObject obj = Instantiate(item, inventory.slots[i].transform, false);
+                obj.name = obj.name.Replace("(Clone)", "").Trim();
+                Destroy(gameObject);
+                break;
             }
         }
+        this.enabled = false;
     }
 }
