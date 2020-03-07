@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\DialogueReader.cs" />
+    <Compile Include="Assets\Scripts\DialogueText.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\Interaction.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
