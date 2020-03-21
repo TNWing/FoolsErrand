@@ -27,7 +27,6 @@ public class Destroyable : MonoBehaviour {
                 {
                     SpawnObj();
                 }
-                this.enabled = false;
             }
         }
         this.enabled = false;

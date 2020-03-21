@@ -12,6 +12,7 @@ public class PickUp : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         GetItem();
     }
+
     void GetItem()
     {
         for (int i = 0; i < inventory.slots.Length; i++)

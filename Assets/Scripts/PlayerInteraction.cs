@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour {
     public GameObject InteractionObj;
     public Vector3 DirFace;
     public bool caninteract = true;
-    // Use this for initialization
+
     void Start()
     {
         StartCoroutine(Interact());
@@ -17,7 +17,7 @@ public class PlayerInteraction : MonoBehaviour {
         if (Input.GetButton("Horizontal"))
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime * Input.GetAxis("Horizontal");
-            DirFace = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            DirFace = new Vector3(Input.GetAxis("Horizontal")*0.2f, 0, 0);
             if (!GetComponent<AudioSource>().isPlaying)
             {
                 GetComponent<AudioSource>().Play();
@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour {
         if (Input.GetButton("Vertical"))
         {
             transform.position += new Vector3(0, speed, 0) * Time.deltaTime * Input.GetAxis("Vertical");
-            DirFace = new Vector3(0, Input.GetAxis("Vertical"), 0);
+            DirFace = new Vector3(0, Input.GetAxis("Vertical") * 0.2f, 0);
             if (!GetComponent<AudioSource>().isPlaying)
             {
                 GetComponent<AudioSource>().Play();

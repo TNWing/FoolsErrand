@@ -11,16 +11,9 @@ public class DialogueText : MonoBehaviour
 
     public ObjectDataCache ObjectData;
 
-    // Use this for initialization
     void Start()
     {
         Text = GameObject.Find("Text");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-            
     }
 
     void OnTriggerEnter2D(Collider2D collision)
