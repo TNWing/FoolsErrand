@@ -61,20 +61,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ChoreList.cs" />
-    <Compile Include="Assets\HasItem.cs" />
-    <Compile Include="Assets\isFixed.cs" />
-    <Compile Include="Assets\PickUpV2.cs" />
+    <Compile Include="Assets\ChangePositionIndex.cs" />
+    <Compile Include="Assets\LoadScene.cs" />
+    <Compile Include="Assets\MovePanel.cs" />
     <Compile Include="Assets\Scripts\BaseInteraction.cs" />
     <Compile Include="Assets\Scripts\CameraMove.cs" />
+    <Compile Include="Assets\Scripts\ChoreList.cs" />
     <Compile Include="Assets\Scripts\Destroyable.cs" />
     <Compile Include="Assets\Scripts\DialogueReader.cs" />
     <Compile Include="Assets\Scripts\DialogueText.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
+    <Compile Include="Assets\Scripts\HasItem.cs" />
     <Compile Include="Assets\Scripts\Interaction.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\isFixed.cs" />
     <Compile Include="Assets\Scripts\ObjectDataCache.cs" />
     <Compile Include="Assets\Scripts\PickUp.cs" />
+    <Compile Include="Assets\Scripts\PickUpV2.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\TaskInteraction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

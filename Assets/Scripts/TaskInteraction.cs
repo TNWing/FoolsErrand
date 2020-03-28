@@ -29,6 +29,9 @@ public class TaskInteraction : MonoBehaviour {
     public SolutionList SList = new SolutionList();
     public ListofIU IUList = new ListofIU();
     public string[] SolutionsText;
+
+    public Sprite FinishedSprite;
+
 	void OnEnable () {
         Player = GameObject.FindGameObjectWithTag("Player");
         if (!issolved)
@@ -78,6 +81,7 @@ public class TaskInteraction : MonoBehaviour {
                 if (isvalid == true)
                 {
                     Debug.Log("Solved");
+                    //GetComponent<SpriteRenderer>().sprite = FinishedSprite;
                     issolved = true;
                     break;
                 }
