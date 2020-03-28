@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61697748350191796}
   - component: {fileID: 114629669703772318}
   - component: {fileID: 114307351284077212}
+  - component: {fileID: 114026700928027232}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -97,6 +98,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114026700928027232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582775185955990}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c74de4d79767e45be3d561f76dd4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scriptname: PickUp
 --- !u!114 &114307351284077212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +131,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582775185955990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 

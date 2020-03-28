@@ -1616,7 +1616,6 @@ GameObject:
   - component: {fileID: 327838441}
   - component: {fileID: 327838440}
   - component: {fileID: 327838442}
-  - component: {fileID: 327838443}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1831,17 +1830,6 @@ MonoBehaviour:
   Text: {fileID: 0}
   OnScreen: 0
   ObjectData: {fileID: 0}
---- !u!114 &327838443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327838435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c4dfb2132921c4f9bd37f3835bed1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &367546970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2614,7 @@ MonoBehaviour:
     - itemused: 00
     - itemused: 00
   SolutionsText: []
+  FinishedSprite: {fileID: 0}
 --- !u!114 &798355281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,6 +2699,7 @@ MonoBehaviour:
     - itemused: 00
     - itemused: 00
   SolutionsText: []
+  FinishedSprite: {fileID: 0}
 --- !u!114 &877833385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4179,6 +4169,7 @@ MonoBehaviour:
     - itemused: 00
     - itemused: 00
   SolutionsText: []
+  FinishedSprite: {fileID: 0}
 --- !u!1 &1421891719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4419,6 +4410,7 @@ MonoBehaviour:
     SolutionItems:
     - itemused: 0000
   SolutionsText: []
+  FinishedSprite: {fileID: 0}
 --- !u!114 &1523973608
 MonoBehaviour:
   m_ObjectHideFlags: 0

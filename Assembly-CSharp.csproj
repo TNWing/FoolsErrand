@@ -64,6 +64,7 @@
     <Compile Include="Assets\ChangePositionIndex.cs" />
     <Compile Include="Assets\LoadScene.cs" />
     <Compile Include="Assets\MovePanel.cs" />
+    <Compile Include="Assets\Quit.cs" />
     <Compile Include="Assets\Scripts\BaseInteraction.cs" />
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\ChoreList.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\PickUpV2.cs" />
     <Compile Include="Assets\Scripts\PlayerInteraction.cs" />
     <Compile Include="Assets\Scripts\TaskInteraction.cs" />
+    <Compile Include="Assets\SettingsManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
