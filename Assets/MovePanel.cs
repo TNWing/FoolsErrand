@@ -21,8 +21,8 @@ public class MovePanel : MonoBehaviour {
         d1 = true;
         d2 = true;
         positions[0]= transform.position;
-        positions[1] =positions[0] - new Vector3(250, 0);
-        positions[2]= positions[0] - new Vector3(250, 0);
+        positions[1] =positions[0] - new Vector3(600, 0);
+        positions[2] = positions[0] - new Vector3(1200, 0);
     }
 	
     public void ActivateIEN()
@@ -59,7 +59,7 @@ public class MovePanel : MonoBehaviour {
         yield return new WaitForSeconds(0.02f);
         while (transform.position != positions[positionindex])
         {
-            transform.position = Vector3.MoveTowards(transform.position, positions[positionindex], 3f);
+            transform.position = Vector3.MoveTowards(transform.position, positions[positionindex], 5f);
             yield return new WaitForSeconds(0.01f);
         }
         d1 = true;
@@ -71,8 +71,8 @@ public class MovePanel : MonoBehaviour {
         {
             while (Panel.alpha > 0)
             {
-                Panel.alpha -= 0.02f;
-                yield return new WaitForSeconds(0.02f);
+                Panel.alpha -= 0.025f;
+                yield return new WaitForSeconds(0.023f);
             }
             enablebuttons = false;
         }
@@ -80,8 +80,8 @@ public class MovePanel : MonoBehaviour {
         {
             while (Panel.alpha < 1)
             {
-                Panel.alpha += 0.02f;
-                yield return new WaitForSeconds(0.02f);
+                Panel.alpha += 0.025f;
+                yield return new WaitForSeconds(0.023f);
             }
             enablebuttons = true;
         }
