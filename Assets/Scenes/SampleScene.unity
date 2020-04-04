@@ -477,7 +477,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &64452710
@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Chore: {fileID: 1375674603}
+  chorename: 
 --- !u!1 &153742808 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1774729113450318, guid: 1232930ed05976a47abdf54c2906f6f5,
@@ -1235,6 +1236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Chore: {fileID: 1523973605}
+  chorename: 
 --- !u!222 &278028276
 CanvasRenderer:
   m_ObjectHideFlags: 2
@@ -1439,7 +1441,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &298478153
@@ -1966,58 +1968,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &476211235
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1575410698}
-    m_Modifications:
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114603680539169668, guid: a37bd7fbb5693d541b4c44feb5977883,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a37bd7fbb5693d541b4c44feb5977883, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &476211236 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4263722698473322, guid: a37bd7fbb5693d541b4c44feb5977883,
-    type: 2}
-  m_PrefabInternal: {fileID: 476211235}
 --- !u!1 &478331599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,7 +3458,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1215652110
@@ -3990,7 +3940,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1373310755
@@ -4546,7 +4496,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1560203448
@@ -4670,7 +4620,6 @@ Transform:
   m_Children:
   - {fileID: 741807622}
   - {fileID: 300708787}
-  - {fileID: 476211236}
   - {fileID: 175882219}
   - {fileID: 616906362}
   - {fileID: 900258633}
@@ -4897,7 +4846,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!224 &2089564114 stripped
@@ -5057,7 +5006,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2137633251
