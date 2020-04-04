@@ -30,10 +30,11 @@ public class TaskInteraction : MonoBehaviour {
     public ListofIU IUList = new ListofIU();
     public string[] SolutionsText;
 
-    public Sprite FinishedSprite;
-
+    public Sprite[] FinishedSprites;
+    public SpriteRenderer SR;//child object that has sprite renderer
 	void OnEnable () {
         Player = GameObject.FindGameObjectWithTag("Player");
+        SR=GetComponent<SpriteRenderer>();
         if (!issolved)
         {
             ItemMenu = GameObject.Find("Item Menu");
@@ -74,6 +75,7 @@ public class TaskInteraction : MonoBehaviour {
                         if (isreadytosolve == true)
                         {
                             isvalid = true;
+                            SR.sprite = FinishedSprites[i];
                             break;
                         }
                     }
