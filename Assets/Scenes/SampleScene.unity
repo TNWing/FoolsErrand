@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 142305656}
   - component: {fileID: 142305661}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Chore-Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,7 +1049,7 @@ GameObject:
   - component: {fileID: 278028273}
   - component: {fileID: 278028275}
   m_Layer: 0
-  m_Name: Sofa
+  m_Name: Chore-Sofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
