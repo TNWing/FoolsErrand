@@ -6,15 +6,7 @@ public class ChangePositionIndex : MonoBehaviour {
     public MovePanel[] Panels;
     public int indexchange;
     //changes the position index in the move panel scripts
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
     public void ChangeIndex()
     {
         foreach (MovePanel P in Panels)

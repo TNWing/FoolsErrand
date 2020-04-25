@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224630309126805744}
   - component: {fileID: 222706839357899094}
   - component: {fileID: 114973545046824118}
+  - component: {fileID: 114243511158685834}
   m_Layer: 0
   m_Name: Bleach (Inventory)
   m_TagString: Untagged
@@ -28,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114243511158685834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545047350092618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1545047350092618}
 --- !u!114 &114973545046824118
 MonoBehaviour:
   m_ObjectHideFlags: 1

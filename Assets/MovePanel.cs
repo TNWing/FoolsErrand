@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MovePanel : MonoBehaviour {
     //moves and makes a panel fade/reappear
-    // Use this for initialization
     public List<Button> ButtonList = new List<Button>();
 
     public bool fade;

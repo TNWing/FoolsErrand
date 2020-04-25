@@ -2420,6 +2420,7 @@ MonoBehaviour:
   SolutionsText: []
   FinishedSprites: []
   SR: {fileID: 0}
+  ListofUsedItems: []
 --- !u!114 &798355281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2506,6 +2507,7 @@ MonoBehaviour:
   SolutionsText: []
   FinishedSprites: []
   SR: {fileID: 0}
+  ListofUsedItems: []
 --- !u!114 &877833385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3886,7 +3888,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.63, y: 2.06}
+  m_Size: {x: 1.54, y: 2.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -3920,8 +3922,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.88, y: 2.58}
-    newSize: {x: 1.63, y: 2.06}
+    oldSize: {x: 1.98, y: 1.9}
+    newSize: {x: 1.54, y: 2.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3936,8 +3938,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1375674603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0925, y: 1.97, z: 0}
-  m_LocalScale: {x: 0.797, y: 0.797, z: 1}
+  m_LocalPosition: {x: 0.01, y: 2.2, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1432068058}
   - {fileID: 64452711}
@@ -3964,7 +3966,6 @@ MonoBehaviour:
     - reqitems:
       - Wood
       - Nails
-      - Nails
     - reqitems:
       - Pen&Paper
     - reqitems:
@@ -3978,10 +3979,11 @@ MonoBehaviour:
     - itemused: 00
   SolutionsText: []
   FinishedSprites:
-  - {fileID: 21300000, guid: 2b0515d5f3f507d41bc4a5352ac39031, type: 3}
-  - {fileID: 21300000, guid: 47b5678c14b9c5e40a8001756b3b2bc1, type: 3}
-  - {fileID: 21300000, guid: d18a6bc8cbc1de64d814c8fe79588bbd, type: 3}
+  - {fileID: 21300000, guid: c84ffdab0e3332f468886b111e85e0d2, type: 3}
+  - {fileID: 21300000, guid: 7572e7e63f6baea4d930735ba5e106eb, type: 3}
+  - {fileID: 21300000, guid: 720f52b5a26da88419ff4f856a5c6a5d, type: 3}
   SR: {fileID: 0}
+  ListofUsedItems: []
 --- !u!1 &1421891719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,6 +4227,7 @@ MonoBehaviour:
   FinishedSprites:
   - {fileID: 21300000, guid: 9d13e16e9869394468c6055f3a4d97ee, type: 3}
   SR: {fileID: 0}
+  ListofUsedItems: []
 --- !u!114 &1523973608
 MonoBehaviour:
   m_ObjectHideFlags: 0

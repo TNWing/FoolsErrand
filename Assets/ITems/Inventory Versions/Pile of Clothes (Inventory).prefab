@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224537582146729760}
   - component: {fileID: 222847449459831930}
   - component: {fileID: 114402015064510598}
+  - component: {fileID: 114428014125079772}
   m_Layer: 0
   m_Name: Pile of Clothes (Inventory)
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114428014125079772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104746977956930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1104746977956930}
 --- !u!222 &222847449459831930
 CanvasRenderer:
   m_ObjectHideFlags: 1

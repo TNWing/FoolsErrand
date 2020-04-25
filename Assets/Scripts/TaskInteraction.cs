@@ -21,7 +21,7 @@ public class ListofIU//list of above class
 {
     public List<ItemUsed> SolutionItems;
 }
-public class TaskInteraction : MonoBehaviour {
+public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain unused items back
     public List<AudioSource> SFXList = new List<AudioSource>();
     public bool issolved;
     public GameObject ItemMenu;
@@ -32,6 +32,8 @@ public class TaskInteraction : MonoBehaviour {
 
     public Sprite[] FinishedSprites;
     public SpriteRenderer SR;//child object that has sprite renderer
+
+    public List<GameObject> ListofUsedItems = new List<GameObject>();
 	void OnEnable () {
         Player = GameObject.FindGameObjectWithTag("Player");
         SR=GetComponent<SpriteRenderer>();
@@ -63,6 +65,7 @@ public class TaskInteraction : MonoBehaviour {
                         itemvalid = true;
                         IU[i].itemused[n] = true;
                         Destroy(Inv[e].transform.GetChild(0).gameObject);
+                        ListofUsedItems.Add(Inv[e].transform.GetChild(0).gameObject);
                         Player.GetComponent<Inventory>().isFull[e] = false;
                         bool isreadytosolve = true;
                         for (int c = 0; c < Sol[i].reqitems.Count; c++)

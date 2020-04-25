@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224324893973108448}
   - component: {fileID: 222142582363863944}
   - component: {fileID: 114118368308446988}
+  - component: {fileID: 114425613168709690}
   m_Layer: 0
   m_Name: Nails (Inventory)
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114425613168709690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1477229671617580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1477229671617580}
 --- !u!222 &222142582363863944
 CanvasRenderer:
   m_ObjectHideFlags: 1

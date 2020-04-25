@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224751530483058634}
   - component: {fileID: 222986928175460394}
   - component: {fileID: 114008693326146568}
+  - component: {fileID: 114632899217572388}
   m_Layer: 0
   m_Name: Pen&Paper (Inventory)
   m_TagString: Untagged
@@ -55,6 +56,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114632899217572388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1034683355578202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1034683355578202}
 --- !u!222 &222986928175460394
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224536512815985952}
   - component: {fileID: 222648840810512254}
   - component: {fileID: 114721488724272872}
+  - component: {fileID: 114535946969699176}
   m_Layer: 0
   m_Name: Matches (Inventory)
   m_TagString: Untagged
@@ -28,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114535946969699176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1242697322471198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1242697322471198}
 --- !u!114 &114721488724272872
 MonoBehaviour:
   m_ObjectHideFlags: 1

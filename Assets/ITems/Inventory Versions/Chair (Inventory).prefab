@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224128635001036938}
   - component: {fileID: 222361122347927668}
   - component: {fileID: 114683293892013412}
+  - component: {fileID: 114266459102196218}
   m_Layer: 0
   m_Name: Chair (Inventory)
   m_TagString: Untagged
@@ -28,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114266459102196218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867591036442258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryItem: {fileID: 1867591036442258}
 --- !u!114 &114683293892013412
 MonoBehaviour:
   m_ObjectHideFlags: 1
