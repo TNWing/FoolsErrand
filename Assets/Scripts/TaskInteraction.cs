@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 [System.Serializable]
 public class RequiredItems//provides list of items req for a solution
 {
@@ -37,115 +39,155 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
 
     public Vector2 spawnpos;//position where items are returned
     public GameObject ParentObj;//parent object of items that are returned
-	void OnEnable () {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        SR=GetComponent<SpriteRenderer>();
-        if (!issolved)
-        {
-            ItemMenu = GameObject.Find("Item Menu");
-            StartCoroutine(Solve());
-        }
-	}
+    //confirmation vars
+    public bool useobject;//confirmation
+    public GameObject ConfirmationObj;
+    public Button YesButton;
+    public Button NoButton;
+    public bool isclicked;
 
-    IEnumerator Solve()
+    public GameObject selectedobj;//selected object
+    void Awake()
     {
-        yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
+        Player = GameObject.FindGameObjectWithTag("Player");
+        SR = GetComponent<SpriteRenderer>();
+        ConfirmationObj = GameControl.control.ConfirmationObj;
+    }
+    void OnEnable () {
+        useobject = false;
+        var slot = Player.GetComponent<Inventory>().selectedslot;
+        if (slot != 9 && Player.GetComponent<Inventory>().isFull[slot] == true)
+        {
+            selectedobj = Player.GetComponent<Inventory>().slots[slot].transform.GetChild(0).gameObject;
+            if (!issolved)
+            {
+                ItemMenu = GameObject.Find("Item Menu");
+                StartCoroutine(Confirm());
+            }
+        }
+        
+	}
+    IEnumerator Confirm()//brings up text book with yes and no choices?
+    {
+        ConfirmationObj.SetActive(true);
+        ConfirmationObj.transform.Find("TextBox").GetComponentInChildren<TextMeshProUGUI>().text="Use " + selectedobj.name + " on " + gameObject.name + "?";
+        YesButton = ConfirmationObj.transform.Find("Yes Button").gameObject.GetComponent<Button>();
+        NoButton = ConfirmationObj.transform.Find("No Button").gameObject.GetComponent<Button>();
+        YesButton.onClick.AddListener(delegate { SetBool(true); });
+        NoButton.onClick.AddListener(delegate { SetBool(false); });
+        yield return new WaitUntil(() => isclicked);
+        isclicked = false;
+        ConfirmationObj.SetActive(false);
+        if (useobject)
+        {
+            useobject = false;
+            Solve();
+        }
+        else
+        {
+            this.enabled = false;
+        }
+    }
+    void SetBool(bool val)
+    {
+        isclicked = true;
+        useobject = val;
+    }
+
+    void Solve()
+    {
         var Sol = SList.Solutions;
         var IU = IUList.SolutionItems;
         var Inv = Player.GetComponent<Inventory>().slots;
         bool isvalid = false;
         bool itemvalid=false;
         var e = Player.GetComponent<Inventory>().selectedslot;
-        if (e != 9 && Player.GetComponent<Inventory>().isFull[e]==true)
+        string obj = selectedobj.name.ToLower();
+        for (int i = 0; i < Sol.Count; i++)
         {
-            string obj = Inv[e].transform.GetChild(0).gameObject.name.ToLower();
-            for (int i = 0; i < Sol.Count; i++)
+            for (int n = 0; n < Sol[i].reqitems.Count; n++)
             {
-                for (int n = 0; n < Sol[i].reqitems.Count; n++)
+                if (isvalid == true)
                 {
-                    if (isvalid == true)
+                    break;
+                }
+                string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
+                if (ItemName == obj)
+                {
+                    itemvalid = true;
+                    IU[i].itemused[n] = true;//issue
+                    GameObject TempObj = Instantiate(Inv[e].transform.GetChild(0).gameObject.GetComponent<InventoryPrefab>().SpawnItem);
+                    TempObj.transform.parent = gameObject.transform.GetChild(2);
+                    TempObj.SetActive(false);
+                    ListofUsedItems.Add(TempObj);
+                    Destroy(Inv[e].transform.GetChild(0).gameObject);
+                    Player.GetComponent<Inventory>().isFull[e] = false;
+                    bool isreadytosolve = true;
+                    for (int c = 0; c < Sol[i].reqitems.Count; c++)
                     {
-                        break;
-                    }
-                    string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
-                    if (ItemName == obj)
-                    {
-                        itemvalid = true;
-                        IU[i].itemused[n] = true;//issue
-                        GameObject TempObj = Instantiate(Inv[e].transform.GetChild(0).gameObject.GetComponent<InventoryPrefab>().SpawnItem);
-                        TempObj.transform.parent = gameObject.transform.GetChild(2);
-                        TempObj.SetActive(false);
-                        ListofUsedItems.Add(TempObj);
-                        Destroy(Inv[e].transform.GetChild(0).gameObject);
-                        Player.GetComponent<Inventory>().isFull[e] = false;
-                        bool isreadytosolve = true;
-                        for (int c = 0; c < Sol[i].reqitems.Count; c++)
+                        if (IU[i].itemused[c] == false)
                         {
-                            if (IU[i].itemused[c] == false)
-                            {
-                                isreadytosolve = false;
-                            }
+                            isreadytosolve = false;
                         }
-                        if (isreadytosolve == true)
+                    }
+                    if (isreadytosolve == true)
+                    {
+                        isvalid = true;
+                        SR.sprite = FinishedSprites[i];
+                        //adds back unused items to inventory
+                        List<GameObject> ObjToRemove = new List<GameObject>();
+                        foreach (GameObject g in ListofUsedItems)
                         {
-                            isvalid = true;
-                            SR.sprite = FinishedSprites[i];
-                            //adds back unused items to inventory
-                            List<GameObject> ObjToRemove = new List<GameObject>();
-                            foreach (GameObject g in ListofUsedItems)
-                            {
-                                //determines what items were used
+                            //determines what items were used
                                 
-                                for(int a = 0; a < Sol[i].reqitems.Count; a++)
+                            for(int a = 0; a < Sol[i].reqitems.Count; a++)
+                            {
+                                string IName = (Sol[i].reqitems[a] + "(Clone)").ToLower();
+                                Debug.Log(g.name);
+                                if (g.name.ToLower() == IName)
                                 {
-                                    string IName = (Sol[i].reqitems[a] + "(Clone)").ToLower();
-                                    Debug.Log(g.name);
-                                    if (g.name.ToLower() == IName)
-                                    {
-                                        ObjToRemove.Add(g);
-                                        Debug.Log("Item consumed is : " + g);
-                                        break;
-                                    }
+                                    ObjToRemove.Add(g);
+                                    Debug.Log("Item consumed is : " + g);
+                                    break;
                                 }
                             }
-                            foreach (GameObject g in ObjToRemove)
-                            {
-                                ListofUsedItems.Remove(g);
-                                Destroy(g);
-                            }
-                            foreach (GameObject g in ListofUsedItems)//unused items returned
-                            {
-                                Debug.Log(g);
-                                string name = (g.name + "Inventory").ToLower();
-                                GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
-                                Obj.transform.parent = ParentObj.transform;
-                                Obj.transform.position = spawnpos;
-                                Obj.SetActive(true);
-                            }
-                            
                         }
+                        foreach (GameObject g in ObjToRemove)
+                        {
+                            ListofUsedItems.Remove(g);
+                            Destroy(g);
+                        }
+                        foreach (GameObject g in ListofUsedItems)//unused items returned
+                        {
+                            Debug.Log(g);
+                            string name = (g.name + "Inventory").ToLower();
+                            GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
+                            Obj.transform.parent = ParentObj.transform;
+                            Obj.transform.position = spawnpos;
+                            Obj.SetActive(true);
+                        }
+                            
                     }
-                }
-            }
-            
-            if (isvalid == true)
-            {
-                Debug.Log("Solved");
-                issolved = true;
-            }
-            else
-            {
-                if (itemvalid == false)
-                {
-                    Debug.Log("You can't seem to figure out how to use this item...");
-                }
-                else
-                {
-                    Debug.Log("You used an item");
                 }
             }
         }
-        yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
+            
+        if (isvalid == true)
+        {
+            Debug.Log("Solved");
+            issolved = true;
+        }
+        else
+        {
+            if (itemvalid == false)
+            {
+                Debug.Log("You can't seem to figure out how to use this item...");
+            }
+            else
+            {
+                Debug.Log("You used an item");
+            }
+        }
         this.enabled = false;
     }
 }
