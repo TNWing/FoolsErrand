@@ -841,7 +841,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4284453305492400, guid: ce1b979b78639334f933e2ec97359e6f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce1b979b78639334f933e2ec97359e6f, type: 2}
@@ -2067,7 +2067,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4972595336704176, guid: c7dcd15df73fe67409a6116180595696, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dcd15df73fe67409a6116180595696, type: 2}
@@ -2421,6 +2421,8 @@ MonoBehaviour:
   FinishedSprites: []
   SR: {fileID: 0}
   ListofUsedItems: []
+  spawnpos: {x: 0, y: 0}
+  ParentObj: {fileID: 0}
 --- !u!114 &798355281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,6 +2510,8 @@ MonoBehaviour:
   FinishedSprites: []
   SR: {fileID: 0}
   ListofUsedItems: []
+  spawnpos: {x: 0, y: 0}
+  ParentObj: {fileID: 0}
 --- !u!114 &877833385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2598,7 +2602,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4378255265229248, guid: a097a9e0a7f36054d919db191b06ad8a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a097a9e0a7f36054d919db191b06ad8a, type: 2}
@@ -3943,6 +3947,7 @@ Transform:
   m_Children:
   - {fileID: 1432068058}
   - {fileID: 64452711}
+  - {fileID: 1550018017}
   m_Father: {fileID: 1106961793}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3984,6 +3989,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 720f52b5a26da88419ff4f856a5c6a5d, type: 3}
   SR: {fileID: 0}
   ListofUsedItems: []
+  spawnpos: {x: 0, y: 2}
+  ParentObj: {fileID: 1575410697}
 --- !u!1 &1421891719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,6 +4235,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9d13e16e9869394468c6055f3a4d97ee, type: 3}
   SR: {fileID: 0}
   ListofUsedItems: []
+  spawnpos: {x: 0, y: 0}
+  ParentObj: {fileID: 0}
 --- !u!114 &1523973608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4412,6 +4421,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1550018016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1550018017}
+  m_Layer: 10
+  m_Name: ListofObjectsUsed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1550018017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1550018016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1375674607}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1560203448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4577,7 +4614,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4231675324196756, guid: 719ccfe26f4c5ad42a7f9145d3e0721c, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719ccfe26f4c5ad42a7f9145d3e0721c, type: 2}

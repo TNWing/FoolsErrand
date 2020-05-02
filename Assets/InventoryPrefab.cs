@@ -2,5 +2,5 @@
 
 public class InventoryPrefab : MonoBehaviour {
 
-    public GameObject InventoryItem;//prefab
+    public GameObject SpawnItem;//prefab
 }

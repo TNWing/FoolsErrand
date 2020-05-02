@@ -34,6 +34,9 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
     public SpriteRenderer SR;//child object that has sprite renderer
 
     public List<GameObject> ListofUsedItems = new List<GameObject>();
+
+    public Vector2 spawnpos;//position where items are returned
+    public GameObject ParentObj;//parent object of items that are returned
 	void OnEnable () {
         Player = GameObject.FindGameObjectWithTag("Player");
         SR=GetComponent<SpriteRenderer>();
@@ -43,6 +46,7 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
             StartCoroutine(Solve());
         }
 	}
+
     IEnumerator Solve()
     {
         yield return new WaitUntil(() => Input.GetKey(KeyCode.Space));
@@ -59,13 +63,20 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
             {
                 for (int n = 0; n < Sol[i].reqitems.Count; n++)
                 {
+                    if (isvalid == true)
+                    {
+                        break;
+                    }
                     string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
                     if (ItemName == obj)
                     {
                         itemvalid = true;
-                        IU[i].itemused[n] = true;
+                        IU[i].itemused[n] = true;//issue
+                        GameObject TempObj = Instantiate(Inv[e].transform.GetChild(0).gameObject.GetComponent<InventoryPrefab>().SpawnItem);
+                        TempObj.transform.parent = gameObject.transform.GetChild(2);
+                        TempObj.SetActive(false);
+                        ListofUsedItems.Add(TempObj);
                         Destroy(Inv[e].transform.GetChild(0).gameObject);
-                        ListofUsedItems.Add(Inv[e].transform.GetChild(0).gameObject);
                         Player.GetComponent<Inventory>().isFull[e] = false;
                         bool isreadytosolve = true;
                         for (int c = 0; c < Sol[i].reqitems.Count; c++)
@@ -79,30 +90,61 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                         {
                             isvalid = true;
                             SR.sprite = FinishedSprites[i];
-                            break;
+                            //adds back unused items to inventory
+                            List<GameObject> ObjToRemove = new List<GameObject>();
+                            foreach (GameObject g in ListofUsedItems)
+                            {
+                                //determines what items were used
+                                
+                                for(int a = 0; a < Sol[i].reqitems.Count; a++)
+                                {
+                                    string IName = (Sol[i].reqitems[a] + "(Clone)").ToLower();
+                                    Debug.Log(g.name);
+                                    if (g.name.ToLower() == IName)
+                                    {
+                                        ObjToRemove.Add(g);
+                                        Debug.Log("Item consumed is : " + g);
+                                        break;
+                                    }
+                                }
+                            }
+                            foreach (GameObject g in ObjToRemove)
+                            {
+                                ListofUsedItems.Remove(g);
+                                Destroy(g);
+                            }
+                            foreach (GameObject g in ListofUsedItems)//unused items returned
+                            {
+                                Debug.Log(g);
+                                string name = (g.name + "Inventory").ToLower();
+                                GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
+                                Obj.transform.parent = ParentObj.transform;
+                                Obj.transform.position = spawnpos;
+                                Obj.SetActive(true);
+                            }
+                            
                         }
                     }
                 }
-                if (isvalid == true)
+            }
+            
+            if (isvalid == true)
+            {
+                Debug.Log("Solved");
+                issolved = true;
+            }
+            else
+            {
+                if (itemvalid == false)
                 {
-                    Debug.Log("Solved");
-                    //GetComponent<SpriteRenderer>().sprite = FinishedSprite;
-                    issolved = true;
-                    break;
+                    Debug.Log("You can't seem to figure out how to use this item...");
                 }
                 else
                 {
-                    if (itemvalid == false)
-                    {
-                        Debug.Log("You can't seem to figure out how to use this item...");
-                    }
-                    else
-                    {
-                        Debug.Log("You used an item");
-                    }
+                    Debug.Log("You used an item");
                 }
             }
-        } 
+        }
         yield return new WaitWhile(() => Input.GetKey(KeyCode.Space));
         this.enabled = false;
     }
