@@ -47,6 +47,9 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
     public bool isclicked;
 
     public GameObject selectedobj;//selected object
+
+    //for linked puzzles
+    public GameObject[] LinkedPuzzles;
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -189,5 +192,10 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
             }
         }
         this.enabled = false;
+    }
+    
+    void LinkPuzzles()//used for when a puzzle has multiple solutions and each solution uses a different "puzzle source" ie: snack one, bowl and blender
+    {
+
     }
 }
