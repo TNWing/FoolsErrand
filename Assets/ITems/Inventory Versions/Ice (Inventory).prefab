@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9d2d0290e8da24fa0033c191b5ab9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnItem: {fileID: 1293459956911104, guid: ce1b979b78639334f933e2ec97359e6f, type: 2}
+  SpawnItem: {fileID: 1305546437257884, guid: f7dacccfba36d024db21329c57c83d32, type: 2}
 --- !u!222 &222991598306725380
 CanvasRenderer:
   m_ObjectHideFlags: 1

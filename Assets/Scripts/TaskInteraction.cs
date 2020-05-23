@@ -108,7 +108,7 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
         string obj = selectedobj.name.ToLower();
         for (int i = 0; i < Sol.Count; i++)
         {
-            for (int n = 0; n < Sol[i].reqitems.Count; n++)
+            for (int n = 0; n < Sol[i].reqitems.Count; n++)//i refers to the type of solution
             {
                 if (isvalid == true)
                 {
@@ -135,41 +135,11 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                     }
                     if (isreadytosolve == true)
                     {
+                        //adds back unused items to inventory
+                        LinkPuzzles();
+                        ItemReturn(i,gameObject);
                         isvalid = true;
                         SR.sprite = FinishedSprites[i];
-                        //adds back unused items to inventory
-                        List<GameObject> ObjToRemove = new List<GameObject>();
-                        foreach (GameObject g in ListofUsedItems)
-                        {
-                            //determines what items were used
-                                
-                            for(int a = 0; a < Sol[i].reqitems.Count; a++)
-                            {
-                                string IName = (Sol[i].reqitems[a] + "(Clone)").ToLower();
-                                Debug.Log(g.name);
-                                if (g.name.ToLower() == IName)
-                                {
-                                    ObjToRemove.Add(g);
-                                    Debug.Log("Item consumed is : " + g);
-                                    break;
-                                }
-                            }
-                        }
-                        foreach (GameObject g in ObjToRemove)
-                        {
-                            ListofUsedItems.Remove(g);
-                            Destroy(g);
-                        }
-                        foreach (GameObject g in ListofUsedItems)//unused items returned
-                        {
-                            Debug.Log(g);
-                            string name = (g.name + "Inventory").ToLower();
-                            GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
-                            Obj.transform.parent = ParentObj.transform;
-                            Obj.transform.position = spawnpos;
-                            Obj.SetActive(true);
-                        }
-                            
                     }
                 }
             }
@@ -178,6 +148,7 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
         if (isvalid == true)
         {
             Debug.Log("Solved");
+            LinkPuzzles();
             issolved = true;
         }
         else
@@ -190,12 +161,61 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
             {
                 Debug.Log("You used an item");
             }
+            this.enabled = false;
         }
-        this.enabled = false;
+        
     }
-    
     void LinkPuzzles()//used for when a puzzle has multiple solutions and each solution uses a different "puzzle source" ie: snack one, bowl and blender
     {
+        foreach (GameObject g in LinkedPuzzles)
+        {
+            var TI = g.GetComponent<TaskInteraction>();
+            TI.issolved=true;
+            
+            for (int i = 0; i < TI.SList.Solutions.Count; i++)
+            {
+                ItemReturn(i, g,false);
+            }
+        }
+    }
 
+    void ItemReturn(int i, GameObject obj, bool mainobj=true)//main obj refers to whetehr or not the function is refering to the gameobject this script is attached to or a linked obj
+    {
+        Debug.Log("IR");
+        var Sol = obj.GetComponent<TaskInteraction>().SList.Solutions;
+        var LUI = obj.GetComponent<TaskInteraction>().ListofUsedItems;
+        List<GameObject> ObjToRemove = new List<GameObject>();
+        if (mainobj == true)
+        {
+            foreach (GameObject g in LUI)
+            {
+                //determines what items were used
+
+                for (int a = 0; a < Sol[i].reqitems.Count; a++)
+                {
+                    string IName = (Sol[i].reqitems[a] + "(Clone)").ToLower();
+                    if (g.name.ToLower() == IName)
+                    {
+                        ObjToRemove.Add(g);
+                        break;
+                    }
+                }
+            }
+            foreach (GameObject g in ObjToRemove)
+            {
+                ListofUsedItems.Remove(g);
+                Destroy(g);
+            }
+        }
+        
+        foreach (GameObject g in LUI)//unused items returned
+        {
+            string name = (g.name + "Inventory").ToLower();
+            GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
+            Debug.Log(Obj);
+            Obj.transform.parent = obj.GetComponent<TaskInteraction>().ParentObj.transform;
+            Obj.transform.position = spawnpos;
+            Obj.SetActive(true);
+        }
     }
 }
