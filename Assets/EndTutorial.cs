@@ -13,14 +13,14 @@ public GameObject[] Tutorialitems;
 	{
 		if (HasBat)
 		{
-			for (int i = 0; i < Tutorialitems.Length; i++)
+            GameControl.control.Tutorial = false;
+            for (int i = 0; i < Tutorialitems.Length; i++)
 			{
 				Tutorialitems[i].SetActive(false);
 			}
-
 			for (int i = 0; i < items.Length; i++)
 			{
-				items[i].GetComponent<PickUp>().Tutorial = false;
+                
 				items[i].GetComponent<PickUp>().enabled = false;
 			}
 

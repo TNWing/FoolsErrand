@@ -19,17 +19,14 @@ public class PickUp : MonoBehaviour
         TheTextBox = FindObjectOfType<DialogueTextReader>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
-        if(Tutorial)
+        if(!GameControl.control.Tutorial)
         {
-
-            return;
+            GetItem();
+            TheTextBox.ReloadScript(TheText);
+            TheTextBox.CurrentLine = StartLine;
+            TheTextBox.EndAtLine = EndLine;
+            TheTextBox.EnableTextBox();
         }
-        
-        GetItem();
-        TheTextBox.ReloadScript(TheText);
-   	    TheTextBox.CurrentLine = StartLine;
-   	   	TheTextBox.EndAtLine = EndLine;
-    	TheTextBox.EnableTextBox();
     }
 
     void GetItem()

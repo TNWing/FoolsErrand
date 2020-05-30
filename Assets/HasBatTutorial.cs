@@ -10,13 +10,11 @@ public class HasBatTutorial : MonoBehaviour {
 	public ActivateDialogueAtLine closet;
 	public GameObject TutorialPart2;
 
-	// Use this for initialization
 	void Start () 
 	{
 		closet = GameObject.Find("Closet (Tutorial)").GetComponent<ActivateDialogueAtLine>();
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{
 		if (HasBat)

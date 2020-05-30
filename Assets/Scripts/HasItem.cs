@@ -6,11 +6,10 @@ public class HasItem : MonoBehaviour {
     public bool itemgotten;
     public Inventory inventory;
     public GameObject item;
-
     void OnEnable()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        if (!itemgotten)
+        if (!itemgotten && !GameControl.control.Tutorial)
         {
             GetItem();
         }

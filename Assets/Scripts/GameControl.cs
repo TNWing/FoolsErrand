@@ -9,10 +9,13 @@ public class GameControl : MonoBehaviour
     public static GameControl control;
     public int numofchoresdone;
     public int numchores;
+
+    public bool Tutorial;
     void Awake()
     {
         if (control == null)
         {
+            Tutorial = true;
             numofchoresdone = 0;
             DontDestroyOnLoad(gameObject);
             control = this;

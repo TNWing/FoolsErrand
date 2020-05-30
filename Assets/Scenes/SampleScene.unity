@@ -1326,6 +1326,7 @@ MonoBehaviour:
   ConfirmationObj: {fileID: 1523250801}
   numofchoresdone: 0
   numchores: 2
+  Tutorial: 0
 --- !u!4 &234080789
 Transform:
   m_ObjectHideFlags: 0
@@ -4485,6 +4486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalpart: {fileID: 0}
   finalpart2: {fileID: 0}
+  inventory: {fileID: 0}
+  item: {fileID: 1887321813307574, guid: 4d0bf685aa76a9d47b758c833132f181, type: 2}
 --- !u!1 &1080290927
 GameObject:
   m_ObjectHideFlags: 0

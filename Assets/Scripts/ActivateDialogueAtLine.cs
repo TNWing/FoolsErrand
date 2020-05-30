@@ -13,8 +13,6 @@ public class ActivateDialogueAtLine : MonoBehaviour {
 	public int on;
 	public bool HasBat;
 
-	// Use this for initialization
-
 	void OnEnable()
 	{		
 		if(on == off)
