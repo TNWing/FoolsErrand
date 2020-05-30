@@ -212,7 +212,6 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
         {
             string name = (g.name + "Inventory").ToLower();
             GameObject Obj = Instantiate(g, transform.position, Quaternion.identity);
-            Debug.Log(Obj);
             Obj.transform.parent = obj.GetComponent<TaskInteraction>().ParentObj.transform;
             Obj.transform.position = spawnpos;
             Obj.SetActive(true);
