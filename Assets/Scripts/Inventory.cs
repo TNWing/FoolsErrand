@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Inventory : MonoBehaviour
 {
     public bool[] isFull;
@@ -29,6 +30,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
+
             if (Input.GetKeyDown(keys[i]))
             {
                 if (selectedslot == i)

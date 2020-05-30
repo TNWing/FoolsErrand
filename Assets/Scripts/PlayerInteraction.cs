@@ -6,19 +6,16 @@ using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public Image TextBox;
-    public GameObject Text;
     public bool CanMove;
-    public float timer;
     public float speed;
+    public Image TextBox;
     public GameObject InteractionObj;
     public Vector3 DirFace;
     public bool caninteract = true;
+    public bool OnPickUp;
 
     void Start()
     {
-        CanMove = true;
-        Text = GameObject.Find("Text");
         TextBox = GameObject.Find("TextBox").GetComponent<Image>();
         StartCoroutine(Interact());
     }
@@ -46,18 +43,6 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
 
-
-        if (!CanMove)
-        {
-            timer += Time.deltaTime;
-
-            if (Input.GetKeyDown(KeyCode.Space) && timer >= .1f)
-            {
-                CanMove = true;
-                Text.GetComponent<TextMeshProUGUI>().text = "";
-                TextBox.enabled = false;
-            }
-        }
     }
     IEnumerator Interact()
     {

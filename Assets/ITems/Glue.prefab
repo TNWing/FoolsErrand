@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114454157534751456}
   - component: {fileID: 114364180271542890}
   - component: {fileID: 114913682915620782}
+  - component: {fileID: 114452476007586588}
   m_Layer: 0
   m_Name: Glue
   m_TagString: Untagged
@@ -113,6 +114,21 @@ MonoBehaviour:
     myName: 
     myDesc: 
     mySprite: 
+--- !u!114 &114452476007586588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941195376448822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f376263c412f0fc4186f234190de0381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheText: {fileID: 4900000, guid: c356763a3596a2043bdc2a2b4c78fbca, type: 3}
+  StartLine: 4
+  EndLine: 5
+  TheTextBox: {fileID: 0}
 --- !u!114 &114454157534751456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,7 +140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   item: {fileID: 1365584156271588, guid: 468f7a4d595a9734492907386873c8b5, type: 2}
+  TheText: {fileID: 4900000, guid: 378c45d907add1f4bbd97dcace7f49ab, type: 3}
+  StartLine: 1
+  EndLine: 1
+  TheTextBox: {fileID: 0}
+  Tutorial: 0
 --- !u!114 &114913682915620782
 MonoBehaviour:
   m_ObjectHideFlags: 1

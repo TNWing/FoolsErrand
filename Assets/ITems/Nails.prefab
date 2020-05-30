@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114643920841865482}
   - component: {fileID: 114259912697840730}
   - component: {fileID: 114568355224761406}
+  - component: {fileID: 114943984483138170}
   m_Layer: 0
   m_Name: Nails
   m_TagString: Untagged
@@ -136,7 +137,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   item: {fileID: 1477229671617580, guid: d669f011d6f88a74b9dcba42cfcffa9f, type: 2}
+  TheText: {fileID: 4900000, guid: 378c45d907add1f4bbd97dcace7f49ab, type: 3}
+  StartLine: 6
+  EndLine: 6
+  TheTextBox: {fileID: 0}
+  Tutorial: 0
+--- !u!114 &114943984483138170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988038104263656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f376263c412f0fc4186f234190de0381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheText: {fileID: 4900000, guid: c356763a3596a2043bdc2a2b4c78fbca, type: 3}
+  StartLine: 4
+  EndLine: 5
+  TheTextBox: {fileID: 0}
 --- !u!212 &212235259569817110
 SpriteRenderer:
   m_ObjectHideFlags: 1

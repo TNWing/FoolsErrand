@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114738145693355602}
   - component: {fileID: 114354561872472898}
   - component: {fileID: 50657466253765658}
+  - component: {fileID: 114336820520172940}
   m_Layer: 0
   m_Name: Baseball Bat
   m_TagString: Untagged
@@ -119,6 +120,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.4}
   m_EdgeRadius: 0
+--- !u!114 &114336820520172940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377195915624166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e2a6a588327547af6a0c89eda7258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheText: {fileID: 0}
+  TheTextBox: {fileID: 0}
+  items: []
+  StartLine: 0
+  EndLine: 0
+  timer: 0
+  me: {fileID: 0}
 --- !u!114 &114354561872472898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   item: {fileID: 1887321813307574, guid: 4d0bf685aa76a9d47b758c833132f181, type: 2}
+  TheText: {fileID: 4900000, guid: 378c45d907add1f4bbd97dcace7f49ab, type: 3}
+  StartLine: 0
+  EndLine: 0
+  TheTextBox: {fileID: 0}
+  EndTutorial: 0
 --- !u!114 &114738145693355602
 MonoBehaviour:
   m_ObjectHideFlags: 1

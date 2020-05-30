@@ -136,7 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextBox: {fileID: 0}
+  Text: {fileID: 0}
+  player: {fileID: 0}
+  ObjectData: {fileID: 0}
+  inventory: {fileID: 0}
   item: {fileID: 1710459080841852, guid: bc02ace4fe9a354438ff6fc2d6d334db, type: 2}
+  TheText: {fileID: 4900000, guid: 378c45d907add1f4bbd97dcace7f49ab, type: 3}
+  StartLine: 8
+  EndLine: 8
+  TheTextBox: {fileID: 0}
 --- !u!212 &212864085271300816
 SpriteRenderer:
   m_ObjectHideFlags: 1

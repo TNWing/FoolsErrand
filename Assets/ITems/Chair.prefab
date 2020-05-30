@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114485636963079538}
   - component: {fileID: 114361424841778000}
   - component: {fileID: 114473341450083058}
+  - component: {fileID: 114182826784968876}
   m_Layer: 0
   m_Name: Chair
   m_TagString: Untagged
@@ -98,6 +99,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4}
   m_EdgeRadius: 0
+--- !u!114 &114182826784968876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054643766189830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f376263c412f0fc4186f234190de0381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheText: {fileID: 4900000, guid: c356763a3596a2043bdc2a2b4c78fbca, type: 3}
+  StartLine: 4
+  EndLine: 5
+  TheTextBox: {fileID: 0}
 --- !u!114 &114361424841778000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,7 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   item: {fileID: 1867591036442258, guid: a66a9e6f69df647469e7b4419d304820, type: 2}
+  TheText: {fileID: 4900000, guid: 378c45d907add1f4bbd97dcace7f49ab, type: 3}
+  StartLine: 7
+  EndLine: 7
+  TheTextBox: {fileID: 0}
+  Tutorial: 0
 --- !u!212 &212530317168497390
 SpriteRenderer:
   m_ObjectHideFlags: 1

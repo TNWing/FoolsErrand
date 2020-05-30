@@ -26,6 +26,8 @@ public class Destroyable : MonoBehaviour {
                 if (obj != null && obj.name.ToLower() == ItemName)
                 {
                     SpawnObj();
+                    GameObject Wood = GameObject.Find("Wood(Clone)");
+                    Wood.name = "Wood";
                 }
             }
         }

@@ -16,5 +16,6 @@ public class isFixed : MonoBehaviour {
     {
         yield return new WaitUntil(()=>Chore.GetComponent<TaskInteraction>().issolved);
         GetComponent<TextMeshPro>().fontStyle = FontStyles.Strikethrough;
+        GameControl.control.numofchoresdone++;
     }
 }

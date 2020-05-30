@@ -23,8 +23,9 @@ public class ListofIU//list of above class
 {
     public List<ItemUsed> SolutionItems;
 }
-public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain unused items back
-    public List<AudioSource> SFXList = new List<AudioSource>();
+public class TaskInteraction : MonoBehaviour
+{//note: need to add way to obtain unused items back
+    public List<AudioClip> SFXList = new List<AudioClip>();
     public bool issolved;
     public GameObject ItemMenu;
     public GameObject Player;
@@ -48,17 +49,22 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
 
     public GameObject selectedobj;//selected object
 
+    public AudioSource AS;
+
     //for linked puzzles
     public GameObject[] LinkedPuzzles;
     void Awake()
     {
+        AS = GameObject.Find("SFX Player").GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
         SR = GetComponent<SpriteRenderer>();
         ConfirmationObj = GameControl.control.ConfirmationObj;
     }
-    void OnEnable () {
+    void OnEnable()
+    {
         useobject = false;
         var slot = Player.GetComponent<Inventory>().selectedslot;
+        Debug.Log("2");
         if (slot != 9 && Player.GetComponent<Inventory>().isFull[slot] == true)
         {
             selectedobj = Player.GetComponent<Inventory>().slots[slot].transform.GetChild(0).gameObject;
@@ -68,12 +74,12 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                 StartCoroutine(Confirm());
             }
         }
-        
-	}
+
+    }
     IEnumerator Confirm()//brings up text book with yes and no choices?
     {
         ConfirmationObj.SetActive(true);
-        ConfirmationObj.transform.Find("TextBox").GetComponentInChildren<TextMeshProUGUI>().text="Use " + selectedobj.name + " on " + gameObject.name + "?";
+        ConfirmationObj.transform.Find("TextBox").GetComponentInChildren<TextMeshProUGUI>().text = "Use " + selectedobj.name + " on " + gameObject.name + "?";
         YesButton = ConfirmationObj.transform.Find("Yes Button").gameObject.GetComponent<Button>();
         NoButton = ConfirmationObj.transform.Find("No Button").gameObject.GetComponent<Button>();
         YesButton.onClick.AddListener(delegate { SetBool(true); });
@@ -99,11 +105,12 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
 
     void Solve()
     {
+       
         var Sol = SList.Solutions;
         var IU = IUList.SolutionItems;
         var Inv = Player.GetComponent<Inventory>().slots;
         bool isvalid = false;
-        bool itemvalid=false;
+        bool itemvalid = false;
         var e = Player.GetComponent<Inventory>().selectedslot;
         string obj = selectedobj.name.ToLower();
         for (int i = 0; i < Sol.Count; i++)
@@ -117,8 +124,10 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                 string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
                 if (ItemName == obj)
                 {
+
                     itemvalid = true;
-                    IU[i].itemused[n] = true;//issue
+                    IU[i].itemused[n] = true;
+                    
                     GameObject TempObj = Instantiate(Inv[e].transform.GetChild(0).gameObject.GetComponent<InventoryPrefab>().SpawnItem);
                     TempObj.transform.parent = gameObject.transform.GetChild(2);
                     TempObj.SetActive(false);
@@ -137,17 +146,18 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                     {
                         //adds back unused items to inventory
                         LinkPuzzles();
-                        ItemReturn(i,gameObject);
+                        ItemReturn(i, gameObject);
                         isvalid = true;
                         SR.sprite = FinishedSprites[i];
+                        AS.clip = SFXList[i];
+                        AS.Play();
                     }
                 }
             }
         }
-            
+
         if (isvalid == true)
         {
-            Debug.Log("Solved");
             LinkPuzzles();
             issolved = true;
         }
@@ -163,23 +173,23 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
             }
             this.enabled = false;
         }
-        
+
     }
     void LinkPuzzles()//used for when a puzzle has multiple solutions and each solution uses a different "puzzle source" ie: snack one, bowl and blender
     {
         foreach (GameObject g in LinkedPuzzles)
         {
             var TI = g.GetComponent<TaskInteraction>();
-            TI.issolved=true;
-            
+            TI.issolved = true;
+
             for (int i = 0; i < TI.SList.Solutions.Count; i++)
             {
-                ItemReturn(i, g,false);
+                ItemReturn(i, g, false);
             }
         }
     }
 
-    void ItemReturn(int i, GameObject obj, bool mainobj=true)//main obj refers to whetehr or not the function is refering to the gameobject this script is attached to or a linked obj
+    void ItemReturn(int i, GameObject obj, bool mainobj = true)//main obj refers to whetehr or not the function is refering to the gameobject this script is attached to or a linked obj
     {
         Debug.Log("IR");
         var Sol = obj.GetComponent<TaskInteraction>().SList.Solutions;
@@ -207,7 +217,7 @@ public class TaskInteraction : MonoBehaviour {//note: need to add way to obtain 
                 Destroy(g);
             }
         }
-        
+
         foreach (GameObject g in LUI)//unused items returned
         {
             string name = (g.name + "Inventory").ToLower();
