@@ -17,7 +17,7 @@ public class Destroyable : MonoBehaviour {
     }
     void OnEnable()
     {
-        if (Inventory.selectedslot != 9)
+        if (Inventory.selectedslot != 9 && !GameControl.control.Tutorial)
         {
             if (Inventory.isFull[Inventory.selectedslot])
             {

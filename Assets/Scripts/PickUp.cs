@@ -12,7 +12,6 @@ public class PickUp : MonoBehaviour
 	public int StartLine;
 	public int EndLine;
 	public DialogueTextReader TheTextBox;
-    public bool Tutorial;
 
     void OnEnable()
     {
