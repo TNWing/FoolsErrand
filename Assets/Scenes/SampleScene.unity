@@ -6697,7 +6697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b67ceffb278bce48a25d68a1803496c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SFXList: []
+  SFXList:
+  - {fileID: 0}
   issolved: 0
   ItemMenu: {fileID: 0}
   Player: {fileID: 0}

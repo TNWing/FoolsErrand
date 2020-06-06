@@ -124,7 +124,6 @@ public class TaskInteraction : MonoBehaviour
                 string ItemName = (Sol[i].reqitems[n] + " (Inventory)").ToLower();
                 if (ItemName == obj)
                 {
-
                     itemvalid = true;
                     IU[i].itemused[n] = true;
                     
@@ -144,13 +143,16 @@ public class TaskInteraction : MonoBehaviour
                     }
                     if (isreadytosolve == true)
                     {
+                        
                         //adds back unused items to inventory
-                        LinkPuzzles();
                         ItemReturn(i, gameObject);
                         isvalid = true;
                         SR.sprite = FinishedSprites[i];
-                        AS.clip = SFXList[i];
-                        AS.Play();
+                        if (SFXList.Count <= (i+1) &&  SFXList[i] != null)
+                        {
+                            AS.clip = SFXList[i];
+                            AS.Play();
+                        }
                     }
                 }
             }
@@ -173,8 +175,8 @@ public class TaskInteraction : MonoBehaviour
             }
             this.enabled = false;
         }
-
     }
+
     void LinkPuzzles()//used for when a puzzle has multiple solutions and each solution uses a different "puzzle source" ie: snack one, bowl and blender
     {
         foreach (GameObject g in LinkedPuzzles)
@@ -191,7 +193,6 @@ public class TaskInteraction : MonoBehaviour
 
     void ItemReturn(int i, GameObject obj, bool mainobj = true)//main obj refers to whetehr or not the function is refering to the gameobject this script is attached to or a linked obj
     {
-        Debug.Log("IR");
         var Sol = obj.GetComponent<TaskInteraction>().SList.Solutions;
         var LUI = obj.GetComponent<TaskInteraction>().ListofUsedItems;
         List<GameObject> ObjToRemove = new List<GameObject>();
