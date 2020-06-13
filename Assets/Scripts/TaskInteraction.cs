@@ -23,14 +23,17 @@ public class ListofIU//list of above class
 {
     public List<ItemUsed> SolutionItems;
 }
+
 public class TaskInteraction : MonoBehaviour
-{//note: need to add way to obtain unused items back
+{
     public List<AudioClip> SFXList = new List<AudioClip>();
+    public AudioSource ChoreComplete;
+
     public bool issolved;
     public GameObject ItemMenu;
     public GameObject Player;
     public SolutionList SList = new SolutionList();
-    public ListofIU IUList = new ListofIU();
+    public ListofIU IUList= new ListofIU();
     public string[] SolutionsText;
 
     public Sprite[] FinishedSprites;
@@ -55,17 +58,36 @@ public class TaskInteraction : MonoBehaviour
     public GameObject[] LinkedPuzzles;
     void Awake()
     {
+        ChoreComplete = GameObject.Find("Chore Complete SFX").GetComponent<AudioSource>();
+        SetVars();
         AS = GameObject.Find("SFX Player").GetComponent<AudioSource>();
         Player = GameObject.FindGameObjectWithTag("Player");
         SR = GetComponent<SpriteRenderer>();
         ConfirmationObj = GameControl.control.ConfirmationObj;
     }
+    void SetVars()
+    {
+        for (int i = 0; i < SList.Solutions.Count; i++)
+        {
+            int nlim = SList.Solutions[i].reqitems.Count - 1;
+            if (i != 0)
+            {
+                nlim++;
+                IUList.SolutionItems.Add(new ItemUsed());
+                IUList.SolutionItems[i].itemused = new List<bool>(1);
+            }
+            for (int n = 0; n < nlim; n++)
+            {
+                IUList.SolutionItems[i].itemused.Add(false);//this stops it from proceding more (i=1,n=0)
+            }
+
+        }
+    }
     void OnEnable()
     {
         useobject = false;
         var slot = Player.GetComponent<Inventory>().selectedslot;
-        Debug.Log("2");
-        if (slot != 9 && Player.GetComponent<Inventory>().isFull[slot] == true)
+        if (slot != 9 && Player.GetComponent<Inventory>().isFull[slot] == true && !GameControl.control.Tutorial)
         {
             selectedobj = Player.GetComponent<Inventory>().slots[slot].transform.GetChild(0).gameObject;
             if (!issolved)
