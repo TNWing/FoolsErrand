@@ -13,7 +13,11 @@ public class HasItem : MonoBehaviour {
         {
             GetItem();
         }
-        
+        else
+        {
+
+            this.enabled = false;
+        }
     }
     void GetItem()
     {

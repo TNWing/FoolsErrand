@@ -96,6 +96,11 @@ public class TaskInteraction : MonoBehaviour
                 StartCoroutine(Confirm());
             }
         }
+        else
+        {
+
+            this.enabled = false;
+        }
 
     }
     IEnumerator Confirm()//brings up text book with yes and no choices?
@@ -148,9 +153,8 @@ public class TaskInteraction : MonoBehaviour
                 {
                     itemvalid = true;
                     IU[i].itemused[n] = true;
-                    
                     GameObject TempObj = Instantiate(Inv[e].transform.GetChild(0).gameObject.GetComponent<InventoryPrefab>().SpawnItem);
-                    TempObj.transform.parent = gameObject.transform.GetChild(2);
+                    TempObj.transform.parent = gameObject.transform.GetChild(1);
                     TempObj.SetActive(false);
                     ListofUsedItems.Add(TempObj);
                     Destroy(Inv[e].transform.GetChild(0).gameObject);
@@ -169,8 +173,12 @@ public class TaskInteraction : MonoBehaviour
                         //adds back unused items to inventory
                         ItemReturn(i, gameObject);
                         isvalid = true;
-                        SR.sprite = FinishedSprites[i];
-                        if (SFXList.Count <= (i+1) &&  SFXList[i] != null)
+                        if (FinishedSprites.Length > i)
+                        {
+                            SR.sprite = FinishedSprites[i];
+                        }
+                       
+                        if (SFXList.Count >0 &&  SFXList[i] != null)
                         {
                             AS.clip = SFXList[i];
                             AS.Play();
@@ -184,17 +192,10 @@ public class TaskInteraction : MonoBehaviour
         {
             LinkPuzzles();
             issolved = true;
+            ChoreComplete.Play();
         }
         else
         {
-            if (itemvalid == false)
-            {
-                Debug.Log("You can't seem to figure out how to use this item...");
-            }
-            else
-            {
-                Debug.Log("You used an item");
-            }
             this.enabled = false;
         }
     }

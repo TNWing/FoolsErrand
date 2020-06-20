@@ -124,7 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d62a5aad0686643b869deeddbaf197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
   item: {fileID: 1242697322471198, guid: 6883ecec323280c4a82522015a37c22a, type: 2}
+  TheText: {fileID: 0}
+  StartLine: 0
+  EndLine: 0
+  TheTextBox: {fileID: 0}
 --- !u!114 &114748502221773226
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,6 +26,12 @@ public class PickUp : MonoBehaviour
             TheTextBox.EndAtLine = EndLine;
             TheTextBox.EnableTextBox();
         }
+        else
+        {
+
+            this.enabled = false;
+        }
+        
     }
 
     void GetItem()

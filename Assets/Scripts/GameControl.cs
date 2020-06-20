@@ -19,6 +19,8 @@ public class GameControl : MonoBehaviour
             numofchoresdone = 0;
             DontDestroyOnLoad(gameObject);
             control = this;
+            Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 0;
             StartCoroutine(Finish());
         }
         else if (control != this)
@@ -29,7 +31,7 @@ public class GameControl : MonoBehaviour
     IEnumerator Finish()
     {
         yield return new WaitUntil(() => numofchoresdone>=numchores);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1.1f);
         SceneManager.LoadScene(2);
     }
 }
