@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\ChangePositionIndex.cs" />
     <Compile Include="Assets\EndTutorial.cs" />
     <Compile Include="Assets\GetBat.cs" />
